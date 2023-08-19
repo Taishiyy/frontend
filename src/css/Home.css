@@ -1,4 +1,25 @@
-.home{
-    font-size: 32px;
-    text-align: center;
+h1, h2, h3, h4 {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+  
+.first-page {
+  min-height: 100%;
+  padding-top: 30px;
+  background-color: #fffffe;
+}
+
+.text {
+  color: #3c4044;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Train One', cursive;
+  margin-top: 8%;
+  margin-bottom: 6%;
+}
+
+.seven {
+  font-family: 'Train One', cursive;
+  font-size: 400%;
 }

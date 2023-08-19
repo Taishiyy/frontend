@@ -1,4 +1,35 @@
-.App {
-  text-align: center;
+.wrapper {
+  margin: 0 auto;
+  padding: 1% 1%;
 }
 
+.header{
+  min-height: 30px;
+  background-color: #fffffe;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  font-size: 20px;
+  border-bottom: solid 3px #3c4044;
+  /* headerを固定する設定 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header a {
+  text-decoration: none;
+  color: #3c4044;
+}
+
+.logo {
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.introduction {
+  margin-bottom: 4%;
+}
+
+.registration {
+  font-weight: bold;
+}

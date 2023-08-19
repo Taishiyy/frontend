@@ -1,0 +1,35 @@
+.footer-002 {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px 10px 10px;
+    background-color: #3c4044;
+}
+
+.footer-logo {
+    color: #fffffe;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.footer-002__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1.5em;
+    list-style-type: none;
+    margin: 0 0 .5em;
+    padding: .5em;
+}
+
+.footer-002__sns-icon {
+    width: 21px;
+    height: 21px;
+}
+
+.footer-002__copyright {
+    margin: 0;
+    color: #ffffffb3;
+    font-weight: 200;
+    font-size: .8em;
+}

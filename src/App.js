@@ -1,16 +1,18 @@
 import logo from './logo.svg';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-router-dom';
 import './css/App.css';
 import './css/Home.css';
 import React from 'react';
 import Search from './component/Search';
 import ColorBook from './component/colorsBook';
-
-
+import ColorSelect from './component/ColorSelect'
+import ColorPages from './component/ColorPages';
+import Footer from './component/Footer';
+ 
 function App() {
   return (
     <Router>
-      <h1 className='home'>本の評価を色でするサイト</h1>
+      <h1 className='header wrapper'><a href='#page-top'><span className='logo'>7 colored books</span></a></h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -33,10 +35,18 @@ function Home() {
   
   return(
     <>
-      <h2>自分の読んだ本を虹の色のどれに近いか評価してください。<br/>虹の色は赤・橙・黄・緑・青・藍・紫です。</h2>
-      <h1>本を検索する</h1>
-      <Search data={data} />
-      <ColorBook data={data}/>
+      <div className='first-page' id="page-top">
+        <h1 className='text title'><span className='seven'>7</span><br/>colored<br/>books</h1>
+        <h2 className='text'>まだ読んだことのない本との<br/>おもいがけない出会いをあなたに...</h2>
+        <h4 className='text introduction'>7 colored booksは色と読者をつなげるサービスです<br/>今日の気分を色で表現して<br/>新たな本との出会いをお楽しみください</h4>
+        <h1 className='text registration'>本の色を登録する</h1> 
+        <h4 className='text'>自分の読んだ本を虹の色のどれに近いか選んでください<br/>7色はRED(赤)・ORANGE(橙)・YELLOW(黄)・GREEN(緑)・BLUE(青)・INDIGO(藍)・VIOLET(紫)です</h4> 
+        <Search data={data} />
+        {/* <ColorBook data={data}/> */}
+        <ColorSelect />
+      </div>
+      <ColorPages />
+      <Footer />
     </>
   )
 }

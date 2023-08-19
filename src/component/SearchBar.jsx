@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../css/SearchBar.css"
 
 const SearchBar=({ onSearch }) =>{
     const [searchTerm, setSearchTerm] = useState('');
@@ -13,14 +14,16 @@ const SearchBar=({ onSearch }) =>{
     };
 
     return (
-    <form onSubmit={handleSearchSubmit}>
-        <input
-        type="text"
-        value={searchTerm}
-        onChange={handleSearchChange}
-        placeholder="探したい本の名前"
-        />
-        <button type="submit" >本を検索する</button>
+    <form onSubmit={handleSearchSubmit} action="#" className='search-form-003'>
+        <label>
+            <input
+            type="text"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            placeholder="本のタイトルを入力"
+            />
+        </label>
+        <button type="submit" aria-label='検索'></button>
     </form>
     );
 }
