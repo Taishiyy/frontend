@@ -1,0 +1,23 @@
+*{
+    font-family: "Times New Roman", Times, serif; 
+}
+
+.none{
+    list-style: none;
+    font-size: 24px;
+}
+
+.book{
+    list-style: none;
+    margin: 8px;
+    float: left;
+    :hover{
+        opacity: 0.5;
+    }
+}
+.bookName{
+    color:black;
+    font-size: 24px;
+    text-decoration: none;
+}
+
