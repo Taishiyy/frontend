@@ -9,6 +9,7 @@ import ColorBook from './component/colorsBook';
 import ColorSelect from './component/ColorSelect'
 import ColorPages from './component/ColorPages';
 import Footer from './component/Footer';
+import RecommendBook from './component/recommendBook';
 
 function App() {
 
@@ -27,20 +28,20 @@ function App() {
 
 
 function Home() {
-	// const [array, setArray] = React.useState([]);
-	// const fastapi = "https://grant_back-1-s6313601.deta.app/books";
+	const [array, setArray] = React.useState([]);
+	const fastapi = "https://grant_back-1-s6313601.deta.app/books";
 
-	// useEffect(() => {
-  //   fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setArray(data);
-  //       console.log(data);
-  //     })
-  //     .catch(error => console.error("Error fetching data:", error));
-  //   }, []);
+	useEffect(() => {
+    fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
+      .then(response => response.json())
+      .then(data => {
+        setArray(data);
+        console.log(data);
+      })
+      .catch(error => console.error("Error fetching data:", error));
+    }, []);
 
-  const data = [
+  const sample = [
     // 仮データ
     'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Fish', 'Grape',
     'Hat', 'Ice Cream', 'Jellyfish', 'Kangaroo', 'Lion', 'Monkey',
@@ -56,10 +57,11 @@ function Home() {
         <h4 className='text introduction'>7 colored booksは色と読者をつなげるサービスです<br/>今日の気分を色で表現して<br/>新たな本との出会いをお楽しみください</h4>
         <h1 className='text registration'>本の色を登録する</h1> 
         <h4 className='text'>自分の読んだ本を虹の色のどれに近いか選んでください<br/>7色は赤・橙・黄・緑・青・藍・紫です</h4> 
-        <Search data={data} />
+        <Search data={sample} />
         {/* <ColorBook data={data}/> */}
         <ColorSelect />
       </div>
+      {/* <RecommendBook data={array} color="紫" />  */}
       <ColorPages/>
       <Footer />
     </>

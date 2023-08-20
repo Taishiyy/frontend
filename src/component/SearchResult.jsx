@@ -6,7 +6,10 @@ import "../css/SearchResult.css"
 function SearchResult({ results }) {
     return (
             <ul>
-                {results.length === 0 ? ( 
+                {results === null ? (
+                    <li className='none'>Loading...</li>
+            ) : 
+                results.length === 0 ? ( 
                 <li className="none">検索結果:0件</li>
             ) : (
                 results.map((result, index) => (
