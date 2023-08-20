@@ -31,18 +31,18 @@ function App() {
 
 
 function Home() {
-  const [array, setArray] = React.useState([]);
-	const fastapi = "https://grant_back-1-s6313601.deta.app/books";
+  // const [array, setArray] = React.useState([]);
+	// const fastapi = "https://grant_back-1-s6313601.deta.app/books";
 
-	useEffect(() => {
-    fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
-      .then(response => response.json())
-      .then(data => {
-        setArray(data);
-        console.log(data);
-      })
-      .catch(error => console.error("Error fetching data:", error));
-  }, []);
+	// useEffect(() => {
+  //   fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setArray(data);
+  //       console.log(data);
+  //     })
+  //     .catch(error => console.error("Error fetching data:", error));
+  // }, []);
 
   const data = [
     // 仮データ
@@ -54,11 +54,11 @@ function Home() {
   
   return(
     <>
-      <ul>
+      {/* <ul>
         {array.map((item, index) => (
           <li key={index}>Author:{item.author}, Title:{item.title}</li>
         ))}
-      </ul>
+      </ul> */}
       <div className='first-page' id="page-top">
         <h1 className='text title'><span className='seven'>7</span><br/>colored<br/>books</h1>
         <h2 className='text'>まだ読んだことのない本との<br/>おもいがけない出会いをあなたに...</h2>
