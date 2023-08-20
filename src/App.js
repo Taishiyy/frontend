@@ -13,14 +13,18 @@ import Footer from './component/Footer';
 function App() {
 
   return (
-    <Router>
+    // <Router>
+    //   <h1 className='header wrapper'><a href='#page-top'><span className='logo'>7 colored books</span></a></h1>
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/about" element={<About />} />
+    //    {/* 必要に応じて他のルートを追加 */}
+    //   </Routes>
+    // </Router>
+    <>
       <h1 className='header wrapper'><a href='#page-top'><span className='logo'>7 colored books</span></a></h1>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-       {/* 必要に応じて他のルートを追加 */}
-      </Routes>
-    </Router>
+      <Home />
+    </>
   );
 }
 
