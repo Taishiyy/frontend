@@ -1,15 +1,17 @@
 import logo from './logo.svg';
-import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Switch, } from 'react-router-dom';
 import './css/App.css';
 import './css/Home.css';
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Search from './component/Search';
 import ColorBook from './component/colorsBook';
 import ColorSelect from './component/ColorSelect'
 import ColorPages from './component/ColorPages';
 import Footer from './component/Footer';
- 
+
 function App() {
+
   return (
     <Router>
       <h1 className='header wrapper'><a href='#page-top'><span className='logo'>7 colored books</span></a></h1>
@@ -25,6 +27,18 @@ function App() {
 
 
 function Home() {
+  const [array, setArray] = React.useState([]);
+	const url = "https://grant_back-1-s6313601.deta.app/books";
+
+	useEffect(() => {
+    fetch(url)  // FastAPIのエンドポイントに合わせて変更してください
+      .then(response => response.json())
+      .then(data => {
+        setArray(data);
+        console.log(data);
+      })
+      .catch(error => console.error("Error fetching data:", error));
+  }, []);
   const data = [
     // 仮データ
     'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Fish', 'Grape',
@@ -35,6 +49,11 @@ function Home() {
   
   return(
     <>
+      <ul>
+        {array.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
       <div className='first-page' id="page-top">
         <h1 className='text title'><span className='seven'>7</span><br/>colored<br/>books</h1>
         <h2 className='text'>まだ読んだことのない本との<br/>おもいがけない出会いをあなたに...</h2>

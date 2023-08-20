@@ -18,14 +18,13 @@ button>a{
 }
 
 .color-button {
-    min-width: 100px;
     padding: 18px 30px;
     border: gray;
     outline: gray;
     border-radius: 6px;
     margin: 10px;
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 120px;
+    min-height: 120px;
     font-style: oblique;
     color: #fff;
     font-weight: bold;
