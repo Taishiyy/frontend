@@ -13,36 +13,32 @@ import Footer from './component/Footer';
 function App() {
 
   return (
-    // <Router>
-    //   <h1 className='header wrapper'><a href='#page-top'><span className='logo'>7 colored books</span></a></h1>
-    //   <Routes>
-    //     <Route path="/" element={<Home />} />
-    //     <Route path="/about" element={<About />} />
-    //    {/* 必要に応じて他のルートを追加 */}
-    //   </Routes>
-    // </Router>
-    <>
+    <Router>
       <h1 className='header wrapper'><a href='#page-top'><span className='logo'>7 colored books</span></a></h1>
-      <Home />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+       {/* 必要に応じて他のルートを追加 */}
+      </Routes>
+    </Router>
   );
 }
 
 
 
 function Home() {
-  // const [array, setArray] = React.useState([]);
-	// const fastapi = "https://grant_back-1-s6313601.deta.app/books";
+  const [array, setArray] = React.useState([]);
+	const fastapi = "https://grant_back-1-s6313601.deta.app/books";
 
-	// useEffect(() => {
-  //   fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setArray(data);
-  //       console.log(data);
-  //     })
-  //     .catch(error => console.error("Error fetching data:", error));
-  // }, []);
+	useEffect(() => {
+    fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
+      .then(response => response.json())
+      .then(data => {
+        setArray(data);
+        console.log(data);
+      })
+      .catch(error => console.error("Error fetching data:", error));
+  }, []);
 
   const data = [
     // 仮データ
@@ -54,11 +50,11 @@ function Home() {
   
   return(
     <>
-      {/* <ul>
+      <ul>
         {array.map((item, index) => (
           <li key={index}>Author:{item.author}, Title:{item.title}</li>
         ))}
-      </ul> */}
+      </ul>
       <div className='first-page' id="page-top">
         <h1 className='text title'><span className='seven'>7</span><br/>colored<br/>books</h1>
         <h2 className='text'>まだ読んだことのない本との<br/>おもいがけない出会いをあなたに...</h2>
