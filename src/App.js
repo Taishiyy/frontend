@@ -39,6 +39,7 @@ function Home() {
       })
       .catch(error => console.error("Error fetching data:", error));
   }, []);
+
   const data = [
     // 仮データ
     'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Fish', 'Grape',
@@ -49,11 +50,11 @@ function Home() {
   
   return(
     <>
-      <ul>
+      {/* <ul>
         {array.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
-      </ul>
+      </ul> */}
       <div className='first-page' id="page-top">
         <h1 className='text title'><span className='seven'>7</span><br/>colored<br/>books</h1>
         <h2 className='text'>まだ読んだことのない本との<br/>おもいがけない出会いをあなたに...</h2>
