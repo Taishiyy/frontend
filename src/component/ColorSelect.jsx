@@ -16,13 +16,13 @@ const ColorSelect = () => {
     return (
         <>
         <div className="container">
-            <Square color="#F38181" message="red"/>
-            <Square color="#f9a980" message="orange"/>
-            <Square color="#fce38a" message="yellow"/>
-            <Square color="#9fca99" message="green"/>
-            <Square color="#95e1d3" message="blue"/>
-            <Square color="#8490c8" message="indigo"/>
-            <Square color="#a888be" message="violet"/>
+            <Square color="#F38181" message="赤"/>
+            <Square color="#f9a980" message="橙"/>
+            <Square color="#fce38a" message="黄"/>
+            <Square color="#9fca99" message="緑"/>
+            <Square color="#95e1d3" message="青"/>
+            <Square color="#8490c8" message="藍"/>
+            <Square color="#a888be" message="紫"/>
         </div>
         </>
     );

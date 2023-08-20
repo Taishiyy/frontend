@@ -27,18 +27,18 @@ function App() {
 
 
 function Home() {
-  const [array, setArray] = React.useState([]);
-	const fastapi = "https://grant_back-1-s6313601.deta.app/books";
+	// const [array, setArray] = React.useState([]);
+	// const fastapi = "https://grant_back-1-s6313601.deta.app/books";
 
-	useEffect(() => {
-    fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
-      .then(response => response.json())
-      .then(data => {
-        setArray(data);
-        console.log(data);
-      })
-      .catch(error => console.error("Error fetching data:", error));
-  }, []);
+	// useEffect(() => {
+  //   fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setArray(data);
+  //       console.log(data);
+  //     })
+  //     .catch(error => console.error("Error fetching data:", error));
+  //   }, []);
 
   const data = [
     // 仮データ
@@ -50,22 +50,17 @@ function Home() {
   
   return(
     <>
-      <ul>
-        {array.map((item, index) => (
-          <li key={index}>Author:{item.author}, Title:{item.title}</li>
-        ))}
-      </ul>
       <div className='first-page' id="page-top">
         <h1 className='text title'><span className='seven'>7</span><br/>colored<br/>books</h1>
         <h2 className='text'>まだ読んだことのない本との<br/>おもいがけない出会いをあなたに...</h2>
         <h4 className='text introduction'>7 colored booksは色と読者をつなげるサービスです<br/>今日の気分を色で表現して<br/>新たな本との出会いをお楽しみください</h4>
         <h1 className='text registration'>本の色を登録する</h1> 
-        <h4 className='text'>自分の読んだ本を虹の色のどれに近いか選んでください<br/>7色はRED(赤)・ORANGE(橙)・YELLOW(黄)・GREEN(緑)・BLUE(青)・INDIGO(藍)・VIOLET(紫)です</h4> 
+        <h4 className='text'>自分の読んだ本を虹の色のどれに近いか選んでください<br/>7色は赤・橙・黄・緑・青・藍・紫です</h4> 
         <Search data={data} />
         {/* <ColorBook data={data}/> */}
         <ColorSelect />
       </div>
-      <ColorPages />
+      <ColorPages/>
       <Footer />
     </>
   )

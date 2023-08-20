@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/ColorPages.css";
 
 const Book = (props) => {
@@ -6,12 +6,26 @@ const Book = (props) => {
         <div className="flex-item">
             <div className="image-wrap">
                 <a><img src={props.url}></img></a>
+                <div>{props.title}</div>
             </div>
+            <div className="title">{props.title}</div>
         </div>
     );
 }
 
 const ColorPage = (props) => {
+    const [array, setArray] = React.useState([]);
+	const fastapi = "https://grant_back-1-s6313601.deta.app/books";
+
+	useEffect(() => {
+    fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
+      .then(response => response.json())
+      .then(data => {
+        setArray(data);
+        console.log(data);
+      })
+      .catch(error => console.error("Error fetching data:", error));
+    }, []);
 
     const colorPageStyle = {
         background: props.color
@@ -21,15 +35,10 @@ const ColorPage = (props) => {
             <div className="color-page" id={`${props.message}-page`}>
                 <h1 style={colorPageStyle}>{props.message}</h1>
                 <div className="flex-container">
-                    <Book url="https://cover.openbd.jp/9784167110079.jpg" />
-                    <Book url="https://cover.openbd.jp/9784065278734.jpg" />
-                    <Book url="https://cover.openbd.jp/9784043718061.jpg" />
-                    <Book url="https://cover.openbd.jp/9784088812120.jpg" />
-                    <Book url="https://cover.openbd.jp/9784088707815.jpg" />
-                    <Book url="https://cover.openbd.jp/9784785320546.jpg" />
-                    <Book url="https://cover.openbd.jp/9784785310462.jpg" />
-                    <Book url="https://cover.openbd.jp/9784065288894.jpg" />
-                    <Book url="https://cover.openbd.jp/9784785306014.jpg" />
+                    {array.map((item, index) => (
+                        item.color === props.message ?
+                        <Book key={index} url={item.uri} title={item.title}/> : null
+                    ))}
                 </div>
             </div>
         </>
@@ -40,13 +49,13 @@ const ColorPages = () => {
     return (
         <>
             <div className="color-pages">
-                <ColorPage color="#F38181" message="red"/>
-                <ColorPage color="#f9a980" message="orange"/>
-                <ColorPage color="#fce38a" message="yellow"/>
-                <ColorPage color="#9fca99" message="green"/>
-                <ColorPage color="#95e1d3" message="blue"/>
-                <ColorPage color="#8490c8" message="indigo"/>
-                <ColorPage color="#a888be" message="violet"/>
+                <ColorPage color="#F38181" message="赤"/>
+                <ColorPage color="#f9a980" message="橙"/>
+                <ColorPage color="#fce38a" message="黄"/>
+                <ColorPage color="#9fca99" message="緑"/>
+                <ColorPage color="#95e1d3" message="青"/>
+                <ColorPage color="#8490c8" message="藍"/>
+                <ColorPage color="#a888be" message="紫"/>
             </div>
         </>
     );
