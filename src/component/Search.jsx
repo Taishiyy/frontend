@@ -12,7 +12,7 @@ function Search({ data }) {
     };
 
     return (
-        <div>
+        <div className='Search'>
             <SearchBar onSearch={handleSearch} />
             <SearchResult results={searchResults} />
         </div>

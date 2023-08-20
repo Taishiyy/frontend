@@ -43,10 +43,10 @@ function Home() {
 
   const sample = [
     // 仮データ
-    'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Fish', 'Grape',
-    'Hat', 'Ice Cream', 'Jellyfish', 'Kangaroo', 'Lion', 'Monkey',
-    'Night', 'Orange', 'Penguin', 'Queen', 'Rabbit', 'Sun', 'Tiger',
-    'Umbrella', 'Violin', 'Watermelon', 'Xylophone', 'Yak', 'Zebra'
+    // 'Apple', 'Banana', 'Cherry', 'Dog', 'Elephant', 'Fish', 'Grape',
+    // 'Hat', 'Ice Cream', 'Jellyfish', 'Kangaroo', 'Lion', 'Monkey',
+    // 'Night', 'Orange', 'Penguin', 'Queen', 'Rabbit', 'Sun', 'Tiger',
+    // 'Umbrella', 'Violin', 'Watermelon', 'Xylophone', 'Yak', 'Zebra'
   ];
   
   return(

@@ -1,3 +1,7 @@
+.Search {
+    max-height: 200px;
+}
+
 .search-form-003 {
     display: flex;
     justify-content: space-between;
