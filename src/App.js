@@ -28,10 +28,10 @@ function App() {
 
 function Home() {
   const [array, setArray] = React.useState([]);
-	const url = "https://grant_back-1-s6313601.deta.app/books";
+	const fastapi = "https://grant_back-1-s6313601.deta.app/books";
 
 	useEffect(() => {
-    fetch(url)  // FastAPIのエンドポイントに合わせて変更してください
+    fetch(fastapi)  // FastAPIのエンドポイントに合わせて変更してください
       .then(response => response.json())
       .then(data => {
         setArray(data);
