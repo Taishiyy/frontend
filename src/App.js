@@ -50,11 +50,11 @@ function Home() {
   
   return(
     <>
-      {/* <ul>
+      <ul>
         {array.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}>Author:{item.author}, Title:{item.title}</li>
         ))}
-      </ul> */}
+      </ul>
       <div className='first-page' id="page-top">
         <h1 className='text title'><span className='seven'>7</span><br/>colored<br/>books</h1>
         <h2 className='text'>まだ読んだことのない本との<br/>おもいがけない出会いをあなたに...</h2>
